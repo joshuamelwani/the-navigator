@@ -1,36 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>LOST Protocol</title>
-    <link href="style.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <h1>The LOST Protocol</h1>
-    <h2>Use this reset when you feel spiritually scattered.</h2>
-    <div class="grid">
-      <div class="card">
-        <strong>L — Listen</strong>
-        Pause. Open Scripture. Sit in silence before doing anything.
-      </div>
-      <div class="card">
-        <strong>O — Own</strong>
-        Admit where your mind or actions have drifted. No shame. Just honesty.
-      </div>
-      <div class="card">
-        <strong>S — Switch</strong>
-        Pick one mindset model and return to it. Don’t overthink.
-      </div>
-      <div class="card">
-        <strong>T — Tell</strong>
-        Reach out. Say it out loud. Don’t isolate.
-      </div>
-    </div>
-    <div class="back"><a href="index.html">← Back</a></div>
-  </body>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   LOST Protocol
+  </title>
+  <link href="navigator.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&amp;family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="page-header">
+   <h1>
+    The LOST Protocol
+   </h1>
+   <h2>
+    Use this reset when you feel spiritually scattered.
+   </h2>
+  </header>
+  <main aria-label="LOST Protocol" class="cards lost-cards" role="region">
+   <div class="card">
+    <strong>
+     👂 L — Listen
+    </strong>
+    Pause. Open Scripture. Sit in silence before doing anything.
+   </div>
+   <div class="card">
+    <strong>
+     🪞 O — Own
+    </strong>
+    Admit where your mind or actions have drifted. No shame. Just honesty.
+   </div>
+   <div class="card">
+    <strong>
+     🔄 S — Switch
+    </strong>
+    Pick one mindset model and return to it. Don’t overthink.
+   </div>
+   <div class="card">
+    <strong>
+     🗣️ T — Tell
+    </strong>
+    Reach out. Say it out loud. Don’t isolate.
+   </div>
+  </main>
+  <div class="back">
+   <a href="index.html">
+    ← Back
+   </a>
+  </div>
+  <script>
+   document.addEventListener("DOMContentLoaded", function() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.card').forEach(card => {
+    card.classList.add('reveal');
+    observer.observe(card);
+  });
+});
+  </script>
+ </body>
 </html>

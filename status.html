@@ -1,41 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Status Checker</title>
-    <link href="style.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <h1>Status Checker</h1>
-    <h2>Choose what feels closest to your current state</h2>
-    <main class="grid">
-      <div class="card">
-        <a href="lost.html">I feel numb / dry spiritually</a>
-      </div>
-      <div class="card">
-        <a href="reactive.html">I'm reacting emotionally</a>
-      </div>
-      <div class="card">
-        <a href="proactive.html">I'm steady, but not growing</a>
-      </div>
-      <div class="card">
-        <a href="reactive.html">I have a major decision to make</a>
-      </div>
-      <div class="card">
-        <a href="reactive.html">I'm uncertain amidst major life changes</a>
-      </div>
-      <div class="card">
-        <a href="lost.html">I don't know what I need</a>
-      </div>
-      <div class="card">
-        <a href="index.html">I feel aligned</a>
-      </div>
-    </main>
-    <div class="back"><a href="index.html">← Back</a></div>
-  </body>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Status Checker
+  </title>
+  <link href="navigator.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&amp;family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="page-header">
+   <h1>
+    Status Checker
+   </h1>
+   <h2>
+    Choose what feels closest to your current state
+   </h2>
+  </header>
+  <main aria-label="Status options" class="cards" role="region">
+   <div class="card">
+    <a class="card-link" href="lost.html" tabindex="0">
+     💤 I feel numb / dry spiritually
+    </a>
+   </div>
+   <div class="card">
+    <a class="card-link" href="reactive.html" tabindex="0">
+     😠 I'm reacting emotionally
+    </a>
+   </div>
+   <div class="card">
+    <a class="card-link" href="proactive.html" tabindex="0">
+     😐 I'm steady, but not growing
+    </a>
+   </div>
+   <div class="card">
+    <a class="card-link" href="reactive.html" tabindex="0">
+     🤔 I have a major decision to make
+    </a>
+   </div>
+   <div class="card">
+    <a class="card-link" href="reactive.html" tabindex="0">
+     🌪️ I'm uncertain amidst major life changes
+    </a>
+   </div>
+   <div class="card">
+    <a class="card-link" href="lost.html" tabindex="0">
+     ❓ I don't know what I need
+    </a>
+   </div>
+   <div class="card">
+    <a class="card-link" href="index.html" tabindex="0">
+     🧭 I feel aligned
+    </a>
+   </div>
+  </main>
+  <div class="back">
+   <a href="index.html">
+    ← Back
+   </a>
+  </div>
+  <script>
+   document.addEventListener("DOMContentLoaded", function() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.card').forEach(card => {
+    card.classList.add('reveal');
+    observer.observe(card);
+  });
+});
+  </script>
+ </body>
 </html>
