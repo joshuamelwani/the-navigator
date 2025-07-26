@@ -1,122 +1,168 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reactive Models</title>
   <style>
-    body {
+    :root {
+      --accent: #ffecd2;
+      --accent-2: #fcb69f;
+      --bg-gradient: linear-gradient(160deg, #0f2027, #203a43, #2c5364);
+      --glass: rgba(255, 255, 255, 0.08);
+      --border: rgba(255, 255, 255, 0.2);
+      --blur: blur(16px);
+      --radius: 20px;
+      --font-main: 'Poppins', sans-serif;
+      --font-heading: 'Playfair Display', serif;
+    }
+
+    html, body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #0d0c1d, #1f1b3a);
-      color: white;
-      font-family: 'Inter', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      font-family: var(--font-main);
+      background: var(--bg-gradient);
+      background-attachment: fixed;
+      background-size: cover;
+      color: #f8f8f8;
       min-height: 100vh;
+      scroll-behavior: smooth;
     }
+
     h1 {
-      margin-top: 60px;
-      font-size: 2.5rem;
-      font-family: 'Playfair Display', serif;
+      font-family: var(--font-heading);
+      font-size: 4.8rem;
+      background: linear-gradient(to right, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      margin: 60px 20px 10px;
     }
+
+    h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #e0e0e0;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
       padding: 40px;
-      width: 100%;
       max-width: 1200px;
+      margin: auto;
     }
+
     .card {
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      padding: 24px;
-      transition: 0.3s;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      backdrop-filter: var(--blur);
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
     }
+
     .card:hover {
       transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.12);
     }
+
     .card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      margin-bottom: 10px;
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+      color: #fff;
     }
+
+    .card .tag {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #ffd9b3;
+      margin-bottom: 6px;
+    }
+
     .card p {
       font-size: 0.95rem;
       line-height: 1.5;
+      color: #ddd;
+      margin-bottom: 10px;
     }
+
+    .card .verse {
+      font-size: 0.85rem;
+      color: #aaa;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
     .back {
-      margin: 30px;
+      display: block;
+      text-align: center;
+      margin: 30px auto 60px;
       text-decoration: none;
-      color: #ccc;
       font-size: 1rem;
+      color: #bbb;
     }
+
     .back:hover {
-      color: white;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+    margin-bottom: 36px;
+  }
+  .card h3 {
+    font-size: 1.4rem;
+  }
+  .card p {
+    font-size: 0.9rem;
+  }
+  .card .verse {
+    font-size: 0.8rem;
+  }
+}
+      h2 {
+        font-size: 1.4rem;
+        margin-bottom: 40px;
+      }
+      .card h3 {
+        font-size: 1.4rem;
+      }
+      .card p {
+        font-size: 0.9rem;
+      }
+      .card .verse {
+        font-size: 0.8rem;
+      }
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Reactive Models</h1>
+  <h1>When life hits, look here.</h1>
+  <h2>10 Biblical mental models for pressure, uncertainty, and decision.</h2>
   <div class="grid">
-    
-        <div class="card">
-            <h3>Ask Better Questions</h3>
-            <p>Don’t spiral. Get curious with God.</p>
-        </div>
-        
-        <div class="card">
-            <h3>Don’t Just React, Respond</h3>
-            <p>Buy time. Create space for wisdom.</p>
-        </div>
-        
-        <div class="card">
-            <h3>Check What You're Standing On</h3>
-            <p>Is this fear or faith? Ego or truth?</p>
-        </div>
-        
-        <div class="card">
-            <h3>Zoom Out</h3>
-            <p>In 5 years, will this matter? Eternal lens > urgent lens.</p>
-        </div>
-        
-        <div class="card">
-            <h3>Ask What God Already Said</h3>
-            <p>Scripture doesn’t expire. Search before stressing.</p>
-        </div>
-        
-        <div class="card">
-            <h3>Check the Fruit</h3>
-            <p>Is your decision sowing peace, love, or pride?</p>
-        </div>
-        
-        <div class="card">
-            <h3>Prune Boldly</h3>
-            <p>Not every good thing is a God thing.</p>
-        </div>
-        
-        <div class="card">
-            <h3>Bring It to the Light</h3>
-            <p>Confusion thrives in silence. Speak it out.</p>
-        </div>
-        
-        <div class="card">
-            <h3>Obey What You Know</h3>
-            <p>Most times, it’s not unclear. It’s inconvenient.</p>
-        </div>
-        
-        <div class="card">
-            <h3>Wait With Expectation</h3>
-            <p>Delay isn’t denial. It’s preparation.</p>
-        </div>
-        
+    <div class="card"><h3>Joseph Frame</h3><div class="tag">[Think]</div><p>You feel stuck or sidelined.</p><div class="verse">📖 Genesis 50:20<br>→ This delay may be preparation, not punishment.</div></div>
+    <div class="card"><h3>Time vs Timing</h3><div class="tag">[Think]</div><p>You’re rushing outcomes.</p><div class="verse">📖 Ecclesiastes 3:1<br>→ Let God set the pace.</div></div>
+    <div class="card"><h3>Stewardship</h3><div class="tag">[Think]</div><p>You’re overwhelmed by responsibility.</p><div class="verse">📖 Luke 16:10<br>→ You manage what God owns. It’s not all on you.</div></div>
+    <div class="card"><h3>Mirror First</h3><div class="tag">[Think]</div><p>You’re judging or comparing others.</p><div class="verse">📖 James 1:23–25<br>→ Check yourself before correcting someone else.</div></div>
+    <div class="card"><h3>Narrow Path</h3><div class="tag">[Do]</div><p>Everyone’s doing it — should you?</p><div class="verse">📖 Matthew 7:13–14<br>→ Follow conviction, not the crowd.</div></div>
+    <div class="card"><h3>Return to Others</h3><div class="tag">[Do]</div><p>You’ve pulled away from people.</p><div class="verse">📖 1 Corinthians 12:12<br>→ Don’t isolate. Reach out.</div></div>
+    <div class="card"><h3>Pause Response</h3><div class="tag">[Do]</div><p>You’re about to react emotionally.</p><div class="verse">📖 Proverbs 19:2<br>→ Stop. Breathe. Respond with wisdom.</div></div>
+    <div class="card"><h3>Identity Check</h3><div class="tag">[Think]</div><p>You feel insecure or unworthy.</p><div class="verse">📖 Romans 8:16<br>→ You’re already accepted — act from that.</div></div>
+    <div class="card"><h3>Spiritual Reset</h3><div class="tag">[Do]</div><p>You feel dry, disconnected, distracted.</p><div class="verse">📖 John 15:5<br>→ Reconnect before continuing.</div></div>
+    <div class="card"><h3>Plant Anyway</h3><div class="tag">[Do]</div><p>You feel unseen or ineffective.</p><div class="verse">📖 Galatians 6:9<br>→ Keep going. God sees your faithfulness.</div></div>
   </div>
   <a class="back" href="index.html">← Back</a>
 </body>
